@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NS.VehicleInventory.Applica
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NS.VehicleInventory.Infrastructure", "NS.VehicleInventory.Infrastructure\NS.VehicleInventory.Infrastructure.csproj", "{0BA7329B-CB8E-4C1C-931F-0E96DD82C77E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NS.VehicleInventory.WebAPI", "NS.VehicleInventory.WebAPI\NS.VehicleInventory.WebAPI.csproj", "{F9B6BB4C-6634-45C0-A212-A4EC27DB86CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0BA7329B-CB8E-4C1C-931F-0E96DD82C77E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BA7329B-CB8E-4C1C-931F-0E96DD82C77E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BA7329B-CB8E-4C1C-931F-0E96DD82C77E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9B6BB4C-6634-45C0-A212-A4EC27DB86CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9B6BB4C-6634-45C0-A212-A4EC27DB86CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9B6BB4C-6634-45C0-A212-A4EC27DB86CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9B6BB4C-6634-45C0-A212-A4EC27DB86CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
