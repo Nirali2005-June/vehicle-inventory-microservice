@@ -10,4 +10,10 @@
     <ProjectReference Include="..\VehicleInventory.Domain\VehicleInventory.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DTOs\" />
+    <Folder Include="Services\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
 </Project>
