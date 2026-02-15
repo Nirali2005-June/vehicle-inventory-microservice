@@ -12,6 +12,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NS.VehicleInventory.Application\NS.VehicleInventory.Application.csproj" />
+    <ProjectReference Include="..\NS.VehicleInventory.Infrastructure\NS.VehicleInventory.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
