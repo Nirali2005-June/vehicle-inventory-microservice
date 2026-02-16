@@ -39,4 +39,11 @@ public class VehiclesController : ControllerBase
         var result = await _vehicleService.CreateVehicleAsync(request);
         return Ok(result);
     }
+
+    [HttpPut("{id}/status")]
+    public async Task<IActionResult> UpdateStatus(int id, UpdateVehicleStatusRequest request)
+    {
+        await _vehicleService.UpdateVehicleStatusAsync(id, request);
+        return NoContent();
+    }
 }
