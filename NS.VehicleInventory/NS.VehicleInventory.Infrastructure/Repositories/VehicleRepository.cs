@@ -25,7 +25,7 @@ public class VehicleRepository : IVehicleRepository
         return await _context.Vehicles.ToListAsync();
     }
 
-    public async Task<Vehicle?> GetByIdAsync(Guid id)
+    public async Task<Vehicle?> GetByIdAsync(int id)
     {
         return await _context.Vehicles
             .FirstOrDefaultAsync(v => v.Id == id);

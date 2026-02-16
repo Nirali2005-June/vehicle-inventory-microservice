@@ -5,16 +5,16 @@ namespace VehicleInventory.Domain.Entities;
 
 public class Vehicle
 {
-    public Guid Id { get; private set; }
+    public int Id { get; private set; }
     public string VehicleCode { get; private set; }
     public string LocationId { get; private set; }
     public string VehicleType { get; private set; }
     public VehicleStatus Status { get; private set; }
 
-    // Required by EF Core
+
     private Vehicle() { }
 
-    public Vehicle(Guid id, string vehicleCode, string locationId, string vehicleType)
+    public Vehicle(string vehicleCode, string locationId, string vehicleType)
     {
         if (string.IsNullOrWhiteSpace(vehicleCode))
             throw new DomainException("Vehicle code is required.");
@@ -25,7 +25,8 @@ public class Vehicle
         if (string.IsNullOrWhiteSpace(vehicleType))
             throw new DomainException("Vehicle type is required.");
 
-        Id = id;
+        
+
         VehicleCode = vehicleCode;
         LocationId = locationId;
         VehicleType = vehicleType;

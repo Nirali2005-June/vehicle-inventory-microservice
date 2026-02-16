@@ -15,10 +15,10 @@ public class VehicleService
         _repository = repository;
     }
 
-    public async Task<Guid> CreateVehicleAsync(CreateVehicleRequest request)
+    public async Task<int> CreateVehicleAsync(CreateVehicleRequest request)
     {
+        
         var vehicle = new Vehicle(
-            Guid.NewGuid(),
             request.VehicleCode,
             request.LocationId,
             request.VehicleType
@@ -43,7 +43,8 @@ public class VehicleService
         }).ToList();
     }
 
-    public async Task<VehicleResponse?> GetVehicleByIdAsync(Guid id)
+    
+    public async Task<VehicleResponse?> GetVehicleByIdAsync(int id)
     {
         var vehicle = await _repository.GetByIdAsync(id);
 
@@ -60,7 +61,8 @@ public class VehicleService
         };
     }
 
-    public async Task UpdateVehicleStatusAsync(Guid id, UpdateVehicleStatusRequest request)
+    
+    public async Task UpdateVehicleStatusAsync(int id, UpdateVehicleStatusRequest request)
     {
         var vehicle = await _repository.GetByIdAsync(id);
 
@@ -92,7 +94,7 @@ public class VehicleService
         await _repository.UpdateAsync(vehicle);
     }
 
-    public async Task DeleteVehicleAsync(Guid id)
+    public async Task DeleteVehicleAsync(int id)
     {
         var vehicle = await _repository.GetByIdAsync(id);
 

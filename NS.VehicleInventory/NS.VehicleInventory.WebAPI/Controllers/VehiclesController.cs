@@ -22,6 +22,17 @@ public class VehiclesController : ControllerBase
         return Ok(vehicles);
     }
 
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(int id)
+    {
+        var vehicle = await _vehicleService.GetVehicleByIdAsync(id);
+
+        if (vehicle == null)
+            return NotFound();
+
+        return Ok(vehicle);
+    }
+
     [HttpPost]
     public async Task<IActionResult> Create(CreateVehicleRequest request)
     {
