@@ -19,8 +19,4 @@
     <ProjectReference Include="..\NS.VehicleInventory.Infrastructure\NS.VehicleInventory.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
