@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NS.VehicleInventory.Application.Services;
 using NS.VehicleInventory.Application.DTOs;
+using NS.VehicleInventory.Application.Services;
+using VehicleInventory.Domain.Exceptions;
 
 namespace NS.VehicleInventory.WebAPI.Controllers;
 
@@ -36,21 +37,42 @@ public class VehiclesController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create(CreateVehicleRequest request)
     {
-        var result = await _vehicleService.CreateVehicleAsync(request);
-        return Ok(result);
+        try
+        {
+            var result = await _vehicleService.CreateVehicleAsync(request);
+            return Ok(result);
+        }
+        catch (DomainException ex)
+        {
+            return BadRequest(ex.Message);
+        }
     }
 
     [HttpPut("{id}/status")]
     public async Task<IActionResult> UpdateStatus(int id, UpdateVehicleStatusRequest request)
     {
-        await _vehicleService.UpdateVehicleStatusAsync(id, request);
-        return NoContent();
+        try
+        {
+            await _vehicleService.UpdateVehicleStatusAsync(id, request);
+            return NoContent();
+        }
+        catch (DomainException ex)
+        {
+            return BadRequest(ex.Message);
+        }
     }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        await _vehicleService.DeleteVehicleAsync(id);
-        return NoContent();
+        try
+        {
+            await _vehicleService.DeleteVehicleAsync(id);
+            return NoContent();
+        }
+        catch (DomainException ex)
+        {
+            return NotFound(ex.Message);
+        }
     }
 }
