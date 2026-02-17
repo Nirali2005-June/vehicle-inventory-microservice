@@ -11,7 +11,7 @@ using NS.VehicleInventory.Infrastructure.Data;
 namespace NS.VehicleInventory.Infrastructure.Migrations
 {
     [DbContext(typeof(VehicleInventoryDbContext))]
-    [Migration("20260216212739_InitialCreate")]
+    [Migration("20260216223527_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

@@ -46,4 +46,11 @@ public class VehiclesController : ControllerBase
         await _vehicleService.UpdateVehicleStatusAsync(id, request);
         return NoContent();
     }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        await _vehicleService.DeleteVehicleAsync(id);
+        return NoContent();
+    }
 }
