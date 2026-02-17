@@ -40,7 +40,12 @@ public class VehiclesController : ControllerBase
         try
         {
             var result = await _vehicleService.CreateVehicleAsync(request);
-            return Ok(result);
+
+            return CreatedAtAction(
+                nameof(GetById),
+                new { id = result },
+                result
+            );
         }
         catch (DomainException ex)
         {
